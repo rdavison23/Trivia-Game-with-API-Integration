@@ -41,6 +41,8 @@ export default function GameSetup({ onStart }) {
           <option value="hard">Hard</option>
         </select>
       </label>
+
+      <button type="submit">Start Game</button>
     </form>
   );
 }
