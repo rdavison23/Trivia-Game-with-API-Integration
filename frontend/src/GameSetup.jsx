@@ -9,4 +9,19 @@ export default function GameSetup({ onStart }) {
     e.preventDefault();
     onStart({ amount, category, difficulty });
   };
+
+  return (
+    <form onSubmit={handleSubmit}>
+      <h2>Start Trivia Game</h2>
+
+      <label>
+        Number of Questions:
+        <input
+          type="number"
+          value={amount}
+          onChange={(e) => setAmount(e.target.value)}
+        />
+      </label>
+    </form>
+  );
 }
