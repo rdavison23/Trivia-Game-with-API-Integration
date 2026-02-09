@@ -30,6 +30,17 @@ export default function GameSetup({ onStart }) {
           <option value="21">Sports</option>
         </select>
       </label>
+      <label>
+        Difficulty:
+        <select
+          value={difficulty}
+          onChange={(e) => setDifficulty(e.target.value)}>
+          <option value="">Any</option>
+          <option value="easy">Easy</option>
+          <option value="medium">Medium</option>
+          <option value="hard">Hard</option>
+        </select>
+      </label>
     </form>
   );
 }
