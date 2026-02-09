@@ -22,6 +22,14 @@ export default function GameSetup({ onStart }) {
           onChange={(e) => setAmount(e.target.value)}
         />
       </label>
+      <label>
+        Category:
+        <select value={category} onChange={(e) => setCategory(e.target.value)}>
+          <option value="25">Art</option>
+          <option value="18">Computers</option>
+          <option value="21">Sports</option>
+        </select>
+      </label>
     </form>
   );
 }
