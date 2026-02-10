@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import GameSetup from './GameSetup';
+import './App.css';
 
 function App() {
   const [questions, setQuestions] = useState([]);
@@ -11,7 +12,6 @@ function App() {
     params.append('amount', amount);
     params.append('category', category);
     if (difficulty) params.append('difficulty', difficulty);
-    console.log(params.toString());
 
     const response = await fetch(
       `http://localhost:3000/trivia/questions?${params.toString()}`
@@ -24,40 +24,59 @@ function App() {
   };
 
   const handleAnswer = (answer) => {
-    const correct = questions[index].correctAnswer;
+    const correct = questions[index].correct_answer;
 
     if (answer === correct) {
       setScore(score + 1);
     }
+
     if (index + 1 < questions.length) {
       setIndex(index + 1);
     } else {
-      alert(` ${score + (answer === correct ? 1 : 0)}`);
+      alert(`Game Over! Score: ${score + (answer === correct ? 1 : 0)}`);
       setQuestions([]);
     }
   };
+
   if (questions.length === 0) {
     return (
       <div className="app-container">
-        {' '}
-        <h1 className="title">Trivia Game</h1>{' '}
+        <h1 className="title">Trivia Game</h1>
         <div className="card">
-          {' '}
-          <GameSetup onStart={startGame} />{' '}
-        </div>{' '}
+          <GameSetup onStart={startGame} />
+        </div>
       </div>
     );
   }
 
-  return (
-    <div>
-      <h1>Trivia Game</h1>
+  const q = questions[index];
+  const answers = [q.correct_answer, ...q.incorrect_answers].sort(
+    () => Math.random() - 0.5
+  );
 
-      {questions.length === 0 ? (
-        <GameSetup onStart={startGame} />
-      ) : (
-        <pre>{JSON.stringify(questions, null, 2)}</pre>
-      )}
+  return (
+    <div className="app-container">
+      <h1 className="title">Trivia Game</h1>
+
+      <div className="card question-card">
+        <h2 dangerouslySetInnerHTML={{ __html: q.question }} />
+
+        <div className="answers">
+          {' '}
+          {answers.map((a, i) => (
+            <button
+              key={i}
+              className="answer-btn"
+              onClick={() => handleAnswer(a)}
+              dangerouslySetInnerHTML={{ __html: a }}
+            />
+          ))}{' '}
+        </div>
+
+        <p className="progress">
+          Question {index + 1} / {questions.length}
+        </p>
+      </div>
     </div>
   );
 }
