@@ -51,3 +51,15 @@ Open Trivia DB API
 1. Score updates
 
 1. Game ends with a final score alert
+
+# Future Improvements
+
+Add a results screen instead of alert
+
+Add a timer per question
+
+Add dynamic category loading
+
+Add animations or transitions
+
+Add user accounts and score history
