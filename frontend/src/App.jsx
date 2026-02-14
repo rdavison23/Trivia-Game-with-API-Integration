@@ -25,15 +25,15 @@ function App() {
 
   const handleAnswer = (answer) => {
     const correct = questions[index].correct_answer;
+    const isCorrect = answer === correct;
 
-    if (answer === correct) {
-      setScore(score + 1);
-    }
+    const newScore = isCorrect ? score + 1 : score;
+    setScore(newScore);
 
     if (index + 1 < questions.length) {
       setIndex(index + 1);
     } else {
-      alert(`Game Over! Score: ${score + (answer === correct ? 1 : 0)}`);
+      alert(`Game Over! Score: ${newScore}`);
       setQuestions([]);
     }
   };
@@ -62,7 +62,6 @@ function App() {
         <h2 dangerouslySetInnerHTML={{ __html: q.question }} />
 
         <div className="answers">
-          {' '}
           {answers.map((a, i) => (
             <button
               key={i}
@@ -70,7 +69,7 @@ function App() {
               onClick={() => handleAnswer(a)}
               dangerouslySetInnerHTML={{ __html: a }}
             />
-          ))}{' '}
+          ))}
         </div>
 
         <p className="progress">
