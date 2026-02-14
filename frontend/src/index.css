@@ -1,5 +1,5 @@
 .app-container {
-  background: #4e5766;
+  background: #01404f;
   min-height: 100vh;
   padding: 2rem;
   font-family: system-ui, sans-serif;
@@ -10,13 +10,13 @@
   text-align: center;
   font-size: 2.5rem;
   margin-bottom: 1%;
-  color: #469be5;
+  color: #5793a2;
 }
 
 .card,
 .question-card,
 .results-card {
-  background: #1d3357;
+  background: #77abb1;
   padding: 2rem;
   border-radius: 12px;
   max-width: 500px;
