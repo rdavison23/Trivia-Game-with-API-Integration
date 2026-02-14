@@ -1,7 +1,14 @@
 .app-container {
-  background: #f3f4f6;
+  background: #4e5766;
   min-height: 100vh;
   padding: 2rem;
   font-family: system-ui, sans-serif;
-  color: #111827;
+  color: #eff0f1;
+}
+
+.title {
+  text-align: center;
+  font-size: 2.5rem;
+  margin-bottom: 2rem;
+  color: #4688e5;
 }
