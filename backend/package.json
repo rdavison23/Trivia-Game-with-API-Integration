@@ -1,0 +1,33 @@
+{
+  "name": "trivia-game-with-api-integration",
+  "version": "1.0.0",
+  "description": "Week 8: Build a Trivia Game with API Integration",
+  "main": "server.js",
+  "scripts": {
+    "test": "cross-env NODE_ENV=test jest --testTimeout=10000"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rdavison23/Trivia-Game-with-API-Integration.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rdavison23/Trivia-Game-with-API-Integration/issues"
+  },
+  "homepage": "https://github.com/rdavison23/Trivia-Game-with-API-Integration#readme",
+  "dependencies": {
+    "cors": "^2.8.6",
+    "dotenv": "^17.2.4",
+    "express": "^5.2.1"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.29.0",
+    "@babel/preset-env": "^7.29.0",
+    "babel-jest": "^30.2.0",
+    "cross-env": "^10.1.0",
+    "jest": "^30.2.0",
+    "supertest": "^7.2.2"
+  }
+}
