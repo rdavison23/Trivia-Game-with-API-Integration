@@ -6,6 +6,7 @@ function App() {
   const [questions, setQuestions] = useState([]);
   const [index, setIndex] = useState(0);
   const [score, setScore] = useState(0);
+  const [gameOver, setGameOver] = useState(false);
 
   const startGame = async ({ amount, category, difficulty }) => {
     const params = new URLSearchParams();
@@ -33,10 +34,31 @@ function App() {
     if (index + 1 < questions.length) {
       setIndex(index + 1);
     } else {
-      alert(`Game Over! Score: ${newScore}`);
-      setQuestions([]);
+      setGameOver(true);
     }
   };
+  if (gameOver) {
+    return (
+      <div className="app-container">
+        <h1 className="title">Trivia Game</h1>
+
+        <div className="card">
+          <h2>Game Over</h2>
+          <p>
+            Your Score: {score} / {questions.length}
+          </p>
+
+          <button
+            onClick={() => {
+              setQuestions([]);
+              setGameOver(false);
+            }}>
+            Play Again
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   if (questions.length === 0) {
     return (
