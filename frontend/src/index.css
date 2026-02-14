@@ -8,9 +8,9 @@
 
 .title {
   text-align: center;
-  font-size: 2.5rem;
+  font-size: 3rem;
   margin-bottom: 1%;
-  color: #5793a2;
+  color: #329198;
 }
 
 .card,
@@ -21,12 +21,12 @@
   border-radius: 12px;
   max-width: 500px;
   margin: 0 auto;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  box-shadow: 0 4px 12px rgba(6, 195, 216, 0.564);
 }
 
 button,
 .answer-btn {
-  background: #2a5e74;
+  background: #04586d;
   color: white;
   border: none;
   padding: 0.75rem 1rem;
@@ -39,5 +39,5 @@ button,
 }
 button:hover,
 .answer-btn:hover {
-  background: #4338ca;
+  background: #3e8f94;
 }
