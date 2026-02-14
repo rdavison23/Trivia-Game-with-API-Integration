@@ -37,3 +37,17 @@ CORS
 dotenv
 
 Open Trivia DB API
+
+# Gameplay Flow
+
+1. User selects game settings
+
+1. Frontend requests questions from backend
+
+1. Questions display one at a time
+
+1. User selects an answer
+
+1. Score updates
+
+1. Game ends with a final score alert
